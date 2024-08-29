@@ -7,24 +7,40 @@ function renderBooks(filteredBooks = bookList) {
     if (filteredBooks.length === 0) {
         const messageRow = document.createElement("tr");
         const messageCell = document.createElement("td");
-        messageCell.colSpan = 3;
+        messageCell.colSpan = 4;
         messageCell.textContent = "No books in the register! You can add books in the form.";
         messageCell.style.textAlign = "center";
         messageRow.appendChild(messageCell);
         bookTableBody.appendChild(messageRow);
     } else {
-        filteredBooks.forEach(book => {
+        filteredBooks.forEach((book, index) => {
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${book.title}</td>
                 <td>${book.author}</td>
                 <td>${book.isbn}</td>
+                <td><button class="info-btn" data-index="${index}">Info</button></td>
             `;
 
             bookTableBody.appendChild(row);
+        });
 
+        document.querySelectorAll('.info-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const bookIndex = event.target.getAttribute('data-index');
+                showBookDetails(bookList[bookIndex]);
+            });
         });
     }
+}
+
+function showBookDetails(book) {
+    document.getElementById("book-list").style.display = "none";
+    document.getElementById("book-details").style.display = "block";
+
+    document.getElementById('book-title').textContent = `Title: ${book.title}`;
+    document.getElementById('book-author').textContent = `Author: ${book.author}`;
+    document.getElementById('book-isbn').textContent = `ISBN: ${book.isbn}`;
 }
 
 document.getElementById("add-book-form").addEventListener("submit", (event) => {
@@ -57,6 +73,11 @@ document.getElementById('search-input').addEventListener('input', (event) => {
     );
 
     renderBooks(filteredBooks);
+});
+
+document.getElementById('back-to-list').addEventListener('click', () => {
+    document.getElementById('book-details').style.display = 'none';
+    document.getElementById('book-list').style.display = 'block';
 });
 
 renderBooks();

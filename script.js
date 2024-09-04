@@ -24,14 +24,14 @@ function renderBooks(filteredBooks = bookList) {
 
             bookTableBody.appendChild(row);
         });
-
-        document.querySelectorAll('.info-btn').forEach(button => {
-            button.addEventListener('click', (event) => {
-                const bookIndex = event.target.getAttribute('data-index');
-                showBookDetails(bookList[bookIndex]);
-            });
-        });
     }
+
+    document.querySelectorAll('.info-btn').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const bookIndex = event.target.getAttribute('data-index');
+            showBookDetails(bookList[bookIndex]);
+        });
+    });
 }
 
 function showBookDetails(book) {
@@ -50,17 +50,23 @@ document.getElementById("add-book-form").addEventListener("submit", (event) => {
     const author = document.getElementById("author").value;
     const isbn = document.getElementById("isbn").value;
 
-    const newBook = {
-        title: title,
-        author: author,
-        isbn: isbn
-    };
+    const bookExists = bookList.some(book => book.title.toLowerCase() === title.toLowerCase() || book.isbn === isbn);
 
-    bookList.push(newBook);
-
-    renderBooks();
-
-    document.getElementById("add-book-form").reset();
+    if (bookExists) {
+        alert("A book with the same title or ISBN already exists in the register. Please enter a different book.")
+    } else {
+        const newBook = {
+            title: title,
+            author: author,
+            isbn: isbn
+        };
+    
+        bookList.push(newBook);
+    
+        renderBooks();
+    
+        document.getElementById("add-book-form").reset();
+    }
 });
 
 document.getElementById('search-input').addEventListener('input', (event) => {

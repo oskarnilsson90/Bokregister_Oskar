@@ -202,3 +202,13 @@ th {
 #book-info span {
     font-weight: bold;
 }
+
+/* På mindre skärmar */
+@media (max-width: 430px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto; /* Möjliggör horisontell scroll */
+        white-space: nowrap; /* Förhindrar att innehållet bryts */
+    }
+}

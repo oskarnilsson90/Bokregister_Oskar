@@ -26,7 +26,7 @@ const API = {
     },
 
     // Creates a new movie using the provided title and release year
-    async createMovie(title, releaseYear) {
+    async createBook(title, author, isbn) {
 
         // // Get the access token for authentication
         // const accessToken = await AUTH.getAccessToken();
@@ -38,21 +38,20 @@ const API = {
         //     return;
         // }
     
-        // Send a POST request to create a new movie
-        const response = await fetch(ENDPOINTS.Movies, {
+        // Send a POST request to create a new book
+        const response = await fetch(ENDPOINTS.Books, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${accessToken}`
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({ title, releaseYear })
+            body: JSON.stringify({ title, author, isbn })
         });
 
         // Check if the response is in JSON format
         if (response.headers.get("content-type")?.includes("application/json")) {
             return response.json();
         } else {
-            return { message: "Movie An error occurred while creating the movie." };
+            return { message: "Book An error occurred while creating the book." };
         }
     },
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oskars Bokregister</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Oskars Bookregister</h1>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <h2>Book</h2>
+
+        <!-- Form for creating a new movie -->
+        <form action="" id="book-form">
+            <h3>Register new book</h3>
+            <div id="message-container" style="color: red;"></div>
+            <label for="book-title">Title</label> <br>
+            <input type="text" name="book-title" id="book-title"> <br>
+
+            <label for="book-author">Author</label> <br>
+            <input type="text" name="book-author" id="book-author"> <br>
+
+            <label for="book-isbn">ISBN</label> <br>
+            <input type="number" name="book-isbn" id="book-isbn"> <br>           
+
+            <input type="submit" value="Register">
+        </form>
+        <a href="index.html">Back</a>
+    </main>
+
+    <script src="/main.js"></script>
+    <script src="/registerBook.js"></script>
+
+</body>
+</html>

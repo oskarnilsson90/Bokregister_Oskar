@@ -1,25 +1,30 @@
-# Bokregister Webbapp
+# Oskars Bokregister
 
-## Översikt
-Denna webbapp är ett bokregister som gör det möjligt för användare att visa en lista över böcker, söka efter specifika böcker, och lägga till nya böcker. All data hanteras på klientsidan med hjälp av HTML, CSS och JavaScript.
+Oskars Bokregister är en enkel webbapplikation byggd för att hantera en samling av böcker. Applikationen tillåter användaren att visa, redigera, lägga till och ta bort böcker från en lista. Varje bok har en titel, författare och ISBN-nummer.
 
 ## Funktioner
-- **Se alla böcker**: Visa alla böcker i registret i en tabell.
-- **Sök efter en bok**: Filtrera böcker baserat på titel, författare eller ISBN via ett sökfält.
-- **Lägg till nya böcker**: Fyll i formulärfält för titel, författare och ISBN för att lägga till en ny bok till listan.
 
-## Användning
-
-### Visa alla böcker
-Vid sidladdning visas alla böcker i bokregistret i en tabell under rubriken "Alla böcker". Om ingen bok finns i registret visas ett meddelande om att listan är tom.
-
-### Sök efter en bok
-Använd sökfältet över tabellen för att filtrera böcker baserat på en del av titeln, författarens namn eller ISBN. När du skriver i sökfältet uppdateras tabellen automatiskt för att visa böcker som matchar söktermen. Om sökfältet är tomt visas alla böcker i listan.
-
-### Lägg till nya böcker
-Använd formuläret för att lägga till en ny bok till registret. Fyll i fälten för titel, författare och ISBN och klicka på knappen "Lägg till bok" för att lägga till boken. Formuläret återställs efter att boken har lagts till, och den nya boken visas direkt i tabellen.
+- **Visa bok**: Användaren kan se detaljerad information om varje bok, inklusive titel, författare och ISBN-nummer.
+- **Redigera bok**: Möjligheten att uppdatera befintlig information om en bok, inklusive att redigera dess titel, författare och ISBN.
+- **Lägg till bok**: Användaren kan lägga till nya böcker i systemet.
+- **Ta bort bok**: Användaren kan permanent ta bort en bok från systemet efter bekräftelse.
+- **Validering**: Inmatningsvalidering för att säkerställa att böcker har en korrekt ISBN (13 siffror) och att alla fält fylls i.
 
 ## Teknologier
-- **HTML**: Används för att skapa strukturen på webbsidan.
-- **CSS**: Används för att styla webbsidan och göra den visuellt tilltalande.
-- **JavaScript**: Används för att hantera funktionaliteten för att lägga till, visa och söka efter böcker.
+
+Projektet är byggt med:
+
+- **HTML**: Struktur och markup för webbgränssnittet.
+- **CSS**: Stilar för att designa och formatera gränssnittet.
+- **JavaScript**: Interaktivitet och API-anrop för att hantera CRUD-operationer (Create, Read, Update, Delete) via asynkrona anrop.
+- **REST API**: Används för att hämta och uppdatera information om böckerna.
+
+## API
+
+Projektet använder ett REST API för att hantera data om böcker. Här är de viktigaste funktionerna som anropas i koden:
+
+- `API.getBooks()`: Hämtar alla böcker från API:et.
+- `API.getBook(id)`: Hämtar detaljerna för en specifik bok baserat på bok-ID.
+- `API.addBook(title, author, isbn)`: Lägger till en ny bok med angiven titel, författare och ISBN.
+- `API.editBook(id, title, author, isbn)`: Uppdaterar information om en specifik bok.
+- `API.deleteBook(id)`: Tar bort en specifik bok.

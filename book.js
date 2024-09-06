@@ -26,9 +26,9 @@ const BOOK_ID = new URLSearchParams(window.location.search).get("id");
             <p><i>Author: ${book.author}</i></p>
             <p><i>ISBN: ${book.isbn}</i></p>
             <p>
-                <a href="editBook.html?id=${book.id}">Edit</a> 
-                <a href="deleteBook.html?id=${book.id}">Delete</a>
-                <a href="index.html">Back</a>
+                <a href="editBook.html?id=${book.id}" class="btn">Edit</a> 
+                <a href="deleteBook.html?id=${book.id}" class="btn delete-btn">Delete</a>
+                <a href="index.html" class="btn">Back</a>
             </p>`;
     } catch (error) {
         console.error("Failed to fetch book details:", error);

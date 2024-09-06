@@ -51,23 +51,6 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-/* Styla alla <a>-taggar som knappar */
-a.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover-effekt för knappar */
-a.btn:hover {
-    background-color: #0056b3;
-}
 
 /* Extra stil för tabellen */
 table {
@@ -85,4 +68,51 @@ th, td {
 th {
     background-color: #333;
     color: white;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Styla alla a-taggar som knappar */
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+a.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Röd stil för delete-knappen */
+a.delete-btn {
+    background-color: #dc3545; /* Röd bakgrund */
+    color: white;
+    border: none;
+}
+
+a.delete-btn:hover {
+    background-color: #c82333; /* Mörkare röd vid hover */
+}
+
+/* Behåll knappen tryckeffekten för delete */
+a.delete-btn:active {
+    background-color: #bd2130; /* Ännu mörkare röd vid tryck */
 }

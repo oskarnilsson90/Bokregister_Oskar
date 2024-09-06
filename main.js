@@ -86,7 +86,7 @@ const API = {
     },
 
     // Deletes a movie with the provided ID
-    async deleteMovie(movieId){
+    async deleteBook(BOOK_ID){
 
         // // Get the access token for authentication
         // const accessToken = await AUTH.getAccessToken();
@@ -99,18 +99,15 @@ const API = {
         // }
 
         // Send a DELETE request to delete a movie
-        const response = await fetch(ENDPOINTS.Movies + `/${movieId}`, {
-            method: "DELETE",
-            headers: {
-                "Authorization": `Bearer ${accessToken}`
-            }
+        const response = await fetch(ENDPOINTS.Books + `/${BOOK_ID}`, {
+            method: "DELETE"
         });
 
         // Check if the response is in JSON format
         if (response.headers.get("content-type")?.includes("application/json")) {
             return response.json();
         } else {
-            return { message: "Movie An error occurred while deleting the movie." };
+            return { message: "Book An error occurred while deleting the book." };
         }
     },
 

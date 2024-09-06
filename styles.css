@@ -29,7 +29,7 @@ h2 {
     color: #333;
 }
 
-#book-form, #book-list, #book-details {
+#book-form, #editBook-form { /* Samma stil för båda formulärerna */
     width: 80%;
     max-width: 800px;
     background: #fff;
@@ -51,40 +51,38 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-.info-btn {
-    padding: 5px 10px;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
+/* Styla alla <a>-taggar som knappar */
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.info-btn:hover {
-    background: #0056b3;
+/* Hover-effekt för knappar */
+a.btn:hover {
+    background-color: #0056b3;
 }
 
-button {
-    padding: 10px 15px;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #218838;
-}
-
+/* Extra stil för tabellen */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #333;
+    color: white;
 }

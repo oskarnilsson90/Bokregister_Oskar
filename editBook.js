@@ -67,11 +67,10 @@ document.getElementById("editBook-form").addEventListener("submit", async functi
         // Display a success message on successful book editing
         this.innerHTML = "<p><b>Thanks for editing the book</b><p/>";
 
-        // Update the displayed book details without reloading the page
-        document.querySelector("h3").textContent = title; // Update the book title in the heading
-        document.getElementById("book").innerHTML = `
-            <p><i>Author: ${author}</i></p>
-            <p><i>ISBN: ${isbn}</i></p>`;
+        // Optionally, redirect to home after editing
+        setTimeout(() => {
+            window.location.href = "index.html";  // Redirect to home after 2 seconds
+        }, 2000);
     }
     catch(error){
         // Display an error message if book editing fails

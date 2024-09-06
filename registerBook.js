@@ -35,6 +35,11 @@ document.getElementById("book-form").addEventListener("submit", async function(e
 
         // Display a success message on successful creation
         this.innerHTML = `<p><b>Thanks for the book</b><p/>`;
+
+        // Optionally, redirect to home after creation
+        setTimeout(() => {
+            window.location.href = "index.html";  // Redirect to home after 2 seconds
+        }, 2000);
     }
     catch(error){
         // Display an error message if book creation fails

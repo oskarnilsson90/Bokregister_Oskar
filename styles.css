@@ -74,59 +74,93 @@ form a.btn {
     cursor: pointer;
     transition: background-color 0.3s ease;
     border: none;
-    margin-right: 5px; /* Lägg till lite marginal för att separera knappar */
+    margin-right: 5px;
 }
 
 form input[type="submit"] {
-    background-color: #007bff; /* Bakgrundsfärg för submit-knappen */
+    background-color: #007bff;
 }
 
 form input[type="submit"]:hover {
-    background-color: #0056b3; /* Mörkare blå vid hover */
+    background-color: #0056b3;
 }
 
 form input[type="submit"]:active {
-    background-color: #004080; /* Ännu mörkare blå vid tryck */
+    background-color: #004080;
 }
 
 form a.btn {
-    background-color: #007bff; /* Bakgrundsfärg för länkar som knappar */
+    background-color: #007bff;
 }
 
 form a.btn:hover {
-    background-color: #0056b3; /* Mörkare blå vid hover */
+    background-color: #0056b3; 
 }
 
 form a.btn:active {
-    background-color: #004080; /* Ännu mörkare blå vid tryck */
+    background-color: #004080; 
+}
+
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+a.btn {
+    background-color: #007bff;
+}
+
+a.btn:hover {
+    background-color: #0056b3;
+}
+
+a.btn:active {
+    background-color: #004080;
 }
 
 /* Röd stil för delete-knappen */
 .delete-btn {
-    background-color: #dc3545; /* Röd bakgrund */
-    color: white; /* Vit text */
+    background-color: #dc3545;
+    padding: 10px 20px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    margin-right: 5px;
 }
 
 .delete-btn:hover {
-    background-color: #c82333; /* Mörkare röd vid hover */
+    background-color: #c82333;
 }
 
 .delete-btn:active {
-    background-color: #bd2130; /* Ännu mörkare röd vid tryck */
+    background-color: #bd2130;
 }
 
 /* Delete button i formuläret */
 #deleteBook-form input[type="submit"] {
-    background-color: #dc3545; /* Röd bakgrund */
-    color: white; /* Vit text */
+    background-color: #dc3545;
+    color: white;
 }
 
 #deleteBook-form input[type="submit"]:hover {
-    background-color: #c82333; /* Mörkare röd vid hover */
+    background-color: #c82333; 
 }
 
 #deleteBook-form input[type="submit"]:active {
-    background-color: #bd2130; /* Ännu mörkare röd vid tryck */
+    background-color: #bd2130;
 }
 
 /* Extra stil för tabeller */

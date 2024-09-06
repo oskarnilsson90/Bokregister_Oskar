@@ -3,8 +3,6 @@
     // Fetch books from the API
     const books = await API.getBooks();
 
-    console.log(books);
-
     // Sort books alphabetically by author
     books.sort((a, b) => a.author.localeCompare(b.author));
 

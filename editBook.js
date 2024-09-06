@@ -1,18 +1,18 @@
 // JavaScript code for handling movie editing form submission
 const BOOK_ID = new URLSearchParams(window.location.search).get("id");
 
-// Immediately-invoked function expression (IIFE) for fetching movie details
+// Immediately-invoked function expression (IIFE) for fetching book details
 (async () => {
-    // Fetch movie details based on the provided movieId
+    // Fetch book details based on the provided bookId
     const book = await API.getBook(BOOK_ID);
 
-    // Set the movie title in the placeholder h3 element
+    // Set the book title in the placeholder h3 element
     document.querySelector("h3").textContent = book.title;
 
-    // Get the movie details container
+    // Get the book details container
     const bookDiv = document.getElementById("book");
 
-    // Populate the movie details container with release year information
+    // Populate the book details container with author and isbn-number information
     bookDiv.innerHTML = `
         <p><i>Author: ${book.author}</i></p>
         <p><i>ISBN: ${book.isbn}</i></p>`;
@@ -23,7 +23,7 @@ const BOOK_ID = new URLSearchParams(window.location.search).get("id");
     document.getElementById("book-isbn").value = book.isbn;
 })();
 
-// Event listener for the movie editing form submission
+// Event listener for the book editing form submission
 document.getElementById("editBook-form").addEventListener("submit", async function(e){
     e.preventDefault();
 
@@ -61,10 +61,10 @@ document.getElementById("editBook-form").addEventListener("submit", async functi
             return;
         }
         
-        // Attempt to edit the movie using the API
+        // Attempt to edit the book using the API
         await API.editBook(BOOK_ID, title, author, isbn );
 
-        // Display a success message on successful movie editing
+        // Display a success message on successful book editing
         this.innerHTML = "<p><b>Thanks for editing the book</b><p/>";
 
         // Update the displayed book details without reloading the page
@@ -74,7 +74,7 @@ document.getElementById("editBook-form").addEventListener("submit", async functi
             <p><i>ISBN: ${isbn}</i></p>`;
     }
     catch(error){
-        // Display an error message if movie editing fails
+        // Display an error message if book editing fails
         this.innerHTML = `<p><b>${error}</b><p/>`;
     }
 });

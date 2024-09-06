@@ -1,4 +1,4 @@
-// JavaScript code for handling movie creation form submission
+// JavaScript code for handling book creation form submission
 document.getElementById("book-form").addEventListener("submit", async function(e){
     e.preventDefault();
 
@@ -30,14 +30,14 @@ document.getElementById("book-form").addEventListener("submit", async function(e
             return;
         }
         
-        // Attempt to create a new movie using the API
+        // Attempt to create a new book using the API
         await API.createBook(title, author, isbn);
 
         // Display a success message on successful creation
         this.innerHTML = `<p><b>Thanks for the book</b><p/>`;
     }
     catch(error){
-        // Display an error message if movie creation fails
+        // Display an error message if book creation fails
         this.innerHTML = `<p><b>${error}</b><p/>`;
     }
 });

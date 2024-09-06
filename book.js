@@ -12,9 +12,6 @@ const BOOK_ID = new URLSearchParams(window.location.search).get("id");
         // Fetch book details based on the provided book ID
         const book = await API.getBook(BOOK_ID);
 
-        // Log book details to debug
-        console.log(book);
-
         // Set the book title in the heading
         document.querySelector("h3").textContent = book.title;
 
@@ -27,7 +24,7 @@ const BOOK_ID = new URLSearchParams(window.location.search).get("id");
             <p><i>ISBN: ${book.isbn}</i></p>
             <p>
                 <a href="editBook.html?id=${book.id}" class="btn">Edit</a> 
-                <a href="deleteBook.html?id=${book.id}" class="btn delete-btn">Delete</a>
+                <a href="deleteBook.html?id=${book.id}" class="delete-btn">Delete</a>
                 <a href="index.html" class="btn">Back</a>
             </p>`;
     } catch (error) {

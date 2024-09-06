@@ -56,10 +56,10 @@ const API = {
     },
 
     // Edits an existing movie with the provided ID, title, and release year
-    async editMovie(id, title, releaseYear){
+    async editBook(id, title, author, isbn){
 
-        // Get the access token for authentication
-        const accessToken = await AUTH.getAccessToken();
+        // // Get the access token for authentication
+        // const accessToken = await AUTH.getAccessToken();
 
         // // Check if the user is logged in
         // if (!accessToken) {
@@ -69,20 +69,19 @@ const API = {
         // }
 
         // Send a PUT request to edit an existing movie
-        const response = await fetch(ENDPOINTS.Movies + `/${id}`, {
+        const response = await fetch(ENDPOINTS.Books + `/${id}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${accessToken}`
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify({ id, title, releaseYear })
+            body: JSON.stringify({ id, title, author, isbn })
         });
 
         // Check if the response is in JSON format
         if (response.headers.get("content-type")?.includes("application/json")) {
             return response.json();
         } else {
-            return { message: "Movie An error occurred while editing the movie." };
+            return { message: "Book An error occurred while editing the book." };
         }
     },
 
